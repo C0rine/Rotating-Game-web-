@@ -11,6 +11,7 @@
   <title>Rotating Game</title>
 
   <link rel="stylesheet" type="text/css" href="rotating.css">
+  <script src="rotating.js"></script>
 
 </head>
 
@@ -21,7 +22,13 @@
 	<p>Look at the image below. Do you think it has a correct orientation? Use the buttons to change the orientation
 		of the image and if you think you got it right confirm your guess. There are multiple images you can try this on. Good luck and have fun!</p>
 
-	<img src="Kandinsky.png" alt="Kandinsky">
+	<section>
+		<button class="button" type="button" onclick="makeRotation">Rotate</button>
+	</section>
+
+	<section id="theimagesection" align="center">
+		<img id="theimage"src="Kandinsky.png" alt="Kandinsky">
+	</section>
 
 	<hr>
 
