@@ -1,0 +1,26 @@
+body {
+    background-color: lightblue;
+    margin: 30px;
+}
+
+h1 {
+    color: navy;
+    font-style: bold;
+    font-family: arial;
+}
+
+p {
+	font-family: arial;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#footer{
+	text-align: center;
+}
