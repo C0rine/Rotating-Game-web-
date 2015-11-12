@@ -5,9 +5,33 @@
 
 var theimage = document.getElementById('theimage');
 var deg = 0;
-var images = ["http://mondriaan.jouwweb.nl/upload/8/6/b/mondriaan/mondriaan-1.large.jpg", 
-				"http://www.wpclipart.com/art/Paintings/Kandinsky/Kandinsky__Red_Oval.png", 
-				"https://upload.wikimedia.org/wikipedia/commons/6/6c/Malevici06.jpg"];
+var imagesobject;
+var imagesobjectlength;
+var images = [];
+
+var europeana = "http://www.europeana.eu/api/v2/search.json?wskey=gch8JXkXX&query=van+gogh&start=1&rows=24&profile=standard"
+var myRequest = new XMLHttpRequest();
+
+
+myRequest.onreadystatechange = function() {
+ 	if (myRequest.readyState == 4 && myRequest.status == 200) {
+        getArray(myRequest.responseText);
+    }
+};
+
+myRequest.open("GET", europeana, true);
+myRequest.send();
+
+function getArray(response){
+	
+	itemsobject = JSON.parse(response);
+	imagesobjectlength = itemsobject.itemsCount;
+	for (i=0; i<imagesobjectlength; i++){
+	 	//images.push(imagesobject.items[i].edmPreview[0]);
+		images.push(itemsobject.items[i].edmPreview[0]);
+	}
+	console.log(images);
+}
 
 function makeRotationCW(){
 	if (deg == 0 || deg == 90 || deg == 180 || deg == 270){
