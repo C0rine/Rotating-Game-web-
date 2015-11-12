@@ -35,10 +35,14 @@ p {
 	color: black;
 }
 
-#theimagesection {
+.rightbtn{
+	float: right;
+}
+
+.theimagesection {
 	margin: 30px;
 }
 
-#footer{
+.footer{
 	text-align: center;
 }
